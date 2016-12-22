@@ -6,3 +6,4 @@ This repository contains resources we have created or used, that are not part of
 
 ## Topics
  * [Speeding up code](SpeedingUpCode/README.md)
+ * ["The Phillip Test": How effective is your research programming workflow?](ThePhillipTest/README.md)
