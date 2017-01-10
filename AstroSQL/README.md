@@ -1,6 +1,6 @@
 # SQL (Structured Query Language) for astronomy and astrophysics - 12 Sep 2013 - Colin Navin
 
-To run the examples etc download and install [SQLite3](www.sqlite.org/index/html). You can install and run it anywhere, but wherever you put it copy the files below ([test.db](test.db) and [SQLtest.py](SQLtest.py)) into the same folder. For the python code all you need is python 2.7.
+To run the examples etc download and install [SQLite3](https://www.sqlite.org/). You can install and run it anywhere, but wherever you put it copy the files below ([test.db](test.db) and [SQLtest.py](SQLtest.py)) into the same folder. For the python code all you need is python 2.7.
 
 Some background on relational databases and SQL: [sql_for_astro.pdf](sql_for_astro.pdf)
 
