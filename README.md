@@ -8,3 +8,4 @@ This repository contains resources we have created or used, that are not part of
  * [Speeding up code](SpeedingUpCode/README.md)
  * ["The Phillip Test": How effective is your research programming workflow?](ThePhillipTest/README.md)
  * [SQL (Structured Query Language) for astronomy and astrophysics](AstroSQL/README.md)
+ * [Reading FITS files with `astropy.io.fits`](AstropyFits/README.md)
