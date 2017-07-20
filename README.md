@@ -11,3 +11,4 @@ This repository contains resources we have created or used, that are not part of
  * [SQL (Structured Query Language) for astronomy and astrophysics](AstroSQL/README.md)
  * [Reading FITS files with `astropy.io.fits`](AstropyFits/README.md)
  * [Python Classes and Data Structures](Classes-and-DataStructures/README.md)
+ * [Plotting with Matplotlib](PlottingWithMatplotlib/README.md)
