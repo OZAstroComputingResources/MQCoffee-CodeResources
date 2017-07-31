@@ -1,0 +1,23 @@
+
+* tmux/screen
+* ncdu
+* qalculate
+* vcsh
+* mosh
+* woof
+* latexmk
+* pandoc
+* atool
+* htop
+* sshfs
+* git-annex
+* redshift
+* apt-listbugs/apt-changelog
+* etckeeper
+* cron
+* potrace
+* raname
+* zsh
+* locate/mlocate/dlocate
+* libnotify
+* myrepos
