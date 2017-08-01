@@ -1,23 +1,35 @@
 
 * tmux/screen
-* ncdu
-* qalculate
-* vcsh
 * mosh
+* sshfs
+* zsh
+
 * woof
+* ncdu
+* htop
+* rename
+* locate/mlocate/dlocate
+* ack/ag
+
+* qalculate
+* libnotify
+
+* vcsh
+* git-annex
+* etckeeper
+* myrepos
+
 * latexmk
 * pandoc
 * atool
-* htop
-* sshfs
-* git-annex
+
 * redshift
-* apt-listbugs/apt-changelog
-* etckeeper
+
 * cron
+* axi-cache
+* apt-listbugs/apt-changelog
+
+
+
 * potrace
-* raname
-* zsh
-* locate/mlocate/dlocate
-* libnotify
-* myrepos
+* inkscape
