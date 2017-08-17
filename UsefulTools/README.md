@@ -3,10 +3,10 @@
 Wilfred and James have built up a collection of tools we commonly use, here some of them.
 
 ## Shells, remote access and SSH
-* [tmux](https://github.com/tmux/tmux)/[screen](https://www.gnu.org/software/screen/)
+* [tmux](https://github.com/tmux/tmux)/[screen](https://www.gnu.org/software/screen/)/[byobu](http://byobu.co/)
 * [mosh](https://mosh.org/)
 * [sshfs](https://github.com/libfuse/sshfs)
-* [zsh](http://www.zsh.org/)
+* [zsh](http://www.zsh.org/) / [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 Also see the MQ Physics wiki for how to setup remote access.
 
@@ -37,6 +37,13 @@ Also see the MQ Physics wiki for how to setup remote access.
 * [pandoc](http://pandoc.org/)
 * [atool](http://www.nongnu.org/atool/)
 
-# Image Tools
+## Image Tools
 * [potrace](http://potrace.sourceforge.net/)
 * [inkscape](https://inkscape.org/en/)
+* [geeqie](http://geeqie.org/)
+
+# Useful Tips
+
+## Tab Completion!
+
+Get in the habit of *always* using tab completion. It makes you faster, stronger, smarter.
