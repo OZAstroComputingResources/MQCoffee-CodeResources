@@ -12,3 +12,4 @@ This repository contains resources we have created or used, that are not part of
  * [Reading FITS files with `astropy.io.fits`](AstropyFits/README.md)
  * [Python Classes and Data Structures](Classes-and-DataStructures/README.md)
  * [Plotting with Matplotlib](PlottingWithMatplotlib/README.md)
+ * [Neat Scripts, Tools and Tips that can help with your research](UsefulTools/README.md)
