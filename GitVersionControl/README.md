@@ -29,7 +29,9 @@
 `nano fake-news.txt`
 
 '''
+
 Lochness Monster was sighted in China.
+
 '''
 
 #### We have now created a text file in out git repository but we haven't told git to record the changes.
@@ -83,7 +85,9 @@ Lochness Monster was sighted in China.
 #### Now we can add some more text
 
 '''
+
 Bunyip tracks found on Hawaiian beach
+
 '''
 
 #### Now compare to the master
@@ -111,12 +115,14 @@ Automatic merge failed; fix conflicts and then commit the result.
 """
 
 #### In the files you will see arrows like these.
-"""
+`"""
+
 <<<<<<< HEAD
 Yeti tracks found on Hawaiian beach. Shocking!!!
 =======
 Yeti tracks found on Hawaiian beach. Smashing!!!
 >>>>>>> executive-order
-"""
+
+"""`
 
 #### Everything between <<<< and ==== is in your HEAD repository and everything between ==== and >>>> is in the repository you are merging from.
