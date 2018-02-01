@@ -13,3 +13,4 @@ This repository contains resources we have created or used, that are not part of
  * [Python Classes and Data Structures](Classes-and-DataStructures/README.md)
  * [Plotting with Matplotlib](PlottingWithMatplotlib/README.md)
  * [Neat Scripts, Tools and Tips that can help with your research](UsefulTools/README.md)
+ * [Where to find help](WhereToFindHelp/README.md)
