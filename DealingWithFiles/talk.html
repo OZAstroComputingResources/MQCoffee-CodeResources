@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="James Tocknell">
+  <title>Dealing with Files</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Dealing with Files</h1>
+  <p class="author">James Tocknell</p>
+</section>
+
+<section id="good-principles-to-follow" class="slide level2">
+<h2>Good principles to follow</h2>
+<ul>
+<li>Avoid custom formats</li>
+<li>Avoid custom schemas</li>
+<li>Store as much metadata as you can (ideally inside the file)</li>
+<li>Use an appropriate format (config vs. data)</li>
+</ul>
+</section>
+<section id="good-principles-to-follow-cont" class="slide level2">
+<h2>Good principles to follow (cont)</h2>
+<ul>
+<li>Consider human readability</li>
+<li>Follow good pipeline principles</li>
+<li>Store your data properly</li>
+</ul>
+</section>
+<section id="avoid-custom-formats" class="slide level2">
+<h2>Avoid custom formats</h2>
+<ul>
+<li>Text is easier to read than binary (remember encoding)</li>
+<li>Memory dumps are hard to read -&gt; convert to something easier to read ASAP</li>
+<li>Use simple formats, but consider how easy it is to share (thousands of csvs are hard to manage.</li>
+</ul>
+</section>
+<section id="avoid-custom-formats-cont" class="slide level2">
+<h2>Avoid custom formats (cont)</h2>
+<ul>
+<li>Use widely readable formats:
+<ul>
+<li>pickle is python (version) specific, should only be used for cache/transport, not storage, see <a href="https://www.youtube.com/watch?v=7KnfGDajDQw">Alex Gaynor: Pickles are for Delis, not Software</a> and <a href="https://eev.ee/release/2015/10/15/dont-use-pickle-use-camel/">Don’t use pickle — use Camel</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="avoid-custom-formats-cont-1" class="slide level2">
+<h2>Avoid custom formats (cont)</h2>
+<ul>
+<li>Use widely readable formats:
+<ul>
+<li>npy files are numpy specific, use HDF5, FITS, etc.</li>
+<li>mat files are matlab specific, use HDF5, FITS, etc. (note matlab -v7.3 option uses HDF5 for this reason)</li>
+</ul></li>
+</ul>
+</section>
+<section id="avoid-custom-formats-cont-2" class="slide level2">
+<h2>Avoid custom formats (cont)</h2>
+<ul>
+<li>There are many human readable/editable config file formats, pick one, don’t create your own</li>
+</ul>
+</section>
+<section id="avoid-custom-schemas" class="slide level2">
+<h2>Avoid custom schemas</h2>
+<ul>
+<li>FITS has common headers, use them rather than creating your own</li>
+<li>Some fields have HDF5 specific schema, use them if appropriate</li>
+</ul>
+</section>
+<section id="store-metadata" class="slide level2">
+<h2>Store metadata</h2>
+<ul>
+<li>Headers in csv files make it easier to understand contents</li>
+<li>Store input/build configuration in output file, helps reproducibility</li>
+<li>Note units, constants etc. used</li>
+</ul>
+</section>
+<section id="use-an-appropriate-format" class="slide level2">
+<h2>Use an appropriate format</h2>
+<ul>
+<li>Config files should be easily editable by users with a text editor</li>
+<li>Simple CSV/TSV/other text table formats are good, but how are you storing metadata?</li>
+<li>Don’t try to use a format where it’s a poor match (e.g. storing binary data in JSON/YAML/XML, storing string-only data in HDF5)</li>
+<li>Databases are worth looking at (sqlite comes with python).</li>
+</ul>
+</section>
+<section id="consider-human-readability" class="slide level2">
+<h2>Consider human readability</h2>
+<ul>
+<li>Text is easier to read than binary for humans, but freeform text is hard to read for computers</li>
+</ul>
+</section>
+<section id="use-good-pipeline-principles" class="slide level2">
+<h2>Use good pipeline principles</h2>
+<ul>
+<li>Don’t modify original datafiles (and back them up)</li>
+<li>Record history in output files (e.g. version used to produce file)</li>
+<li>Make sure final result can always be produced from original data files</li>
+</ul>
+</section>
+<section id="store-your-data-properly" class="slide level2">
+<h2>Store your data properly</h2>
+<ul>
+<li>Upload datafiles to central storage as soon as they are produced (hard drives/SSDs fail)</li>
+<li>Have metadata about files stored with central storage</li>
+</ul>
+</section>
+<section id="where-to-store-your-data" class="slide level2">
+<h2>Where to store your data</h2>
+<ul>
+<li>For MQ: <a href="https://staff.mq.edu.au/support/technology/data-storage" class="uri">https://staff.mq.edu.au/support/technology/data-storage</a></li>
+<li>For Science: <a href="http://web.science.mq.edu.au/it/storage/" class="uri">http://web.science.mq.edu.au/it/storage/</a></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
