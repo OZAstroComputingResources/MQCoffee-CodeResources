@@ -15,3 +15,4 @@ This repository contains resources we have created or used, that are not part of
  * [SQL (Structured Query Language) for astronomy and astrophysics](AstroSQL/README.md)
  * ["The Phillip Test": How effective is your research programming workflow?](ThePhillipTest/README.md)
  * [Where to find help](WhereToFindHelp/README.md)
+ * [Fitting Data](https://github.com/AnitaPetzler/FittingExamples)
