@@ -16,3 +16,4 @@ This repository contains resources we have created or used, that are not part of
  * ["The Phillip Test": How effective is your research programming workflow?](ThePhillipTest/README.md)
  * [Where to find help](WhereToFindHelp/README.md)
  * [Fitting Data](https://github.com/AnitaPetzler/FittingExamples)
+ * [Moving to Python 3](ToPy3/README.md)
