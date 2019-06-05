@@ -55,6 +55,15 @@ These keys are stored in `~/.ssh`, which can only be read by you.
 
 We create keys by running `ssh-keygen`, which by default creates two files:
 `~/.ssh/id_rsa` (the private key) and `~/.ssh/id_rsa.pub` (the public key).
+`ssh-keygen` will ask you two questions:
+
+1. Enter file in which to save the key (~/.ssh/id_rsa):
+2. Enter passphrase (empty for no passphrase):
+
+The first specifies the file to save the private key in, and the second is the
+passphrase (like a password) to use to secure the private key. It's best
+practice to use a strong passphrase on the ssh key (and storing the passphrase
+in your password manager), but you can leave it blank by just hitting enter.
 
 Services like GitHub require that you use SSH keys, hence you need to copy the
 contents of `~/.ssh/id_rsa.pub` and follow the instructions on their website
@@ -75,6 +84,9 @@ do this, run
 ssh-import-id gh:you-github-username
 ```
 Note that `ssh-import-id` may not be installed though.
+
+Github provides more help on using ssh with github and ssh keys at
+https://help.github.com/en/articles/about-ssh
 
 ## SSH config files
 
@@ -156,3 +168,41 @@ ProxyJump mqproxy
 `ProxyJump` is quite new, see
 https://superuser.com/questions/1253960/replace-proxyjump-in-ssh-config
 for alternatives which will work on older systems.
+
+## sshfs
+
+sshfs provides an easy way to access files on a system you can access via ssh,
+rather than using scp to copy files.
+
+You will need an empty folder (we'll call this `server-mount`), and have
+installed sshfs (see below).
+To use sshfs, run
+```
+sshfs server:path/to/remote/folder server-mount
+```
+Now, if you `cd` into `server-mount` you will see the files on the server.
+
+To disconnect, run
+```
+fusermount -u server-mount
+```
+
+### Installing sshfs
+On linux system, sshfs can be downloaded via your package manager
+(apt, yum, dnf, etc.).
+
+On MacOS, the easiest way appears to be to install [homebrew](https://brew.sh),
+then run
+```
+brew cask install osxfuse
+brew install sshfs
+```
+
+[Windows has a port of sshfs](https://github.com/billziss-gh/sshfs-win), which
+can be downloaded via [chocolatey](https://chocolatey.org/). See their website
+for more details.
+
+## Further Resources
+
+* [Github help on SSH](https://help.github.com/en/articles/about-ssh)
+* [Wikibook on SSH](https://en.wikibooks.org/wiki/OpenSSH)
