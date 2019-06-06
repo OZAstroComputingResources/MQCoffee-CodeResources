@@ -18,6 +18,6 @@ This repository contains resources we have created or used, that are not part of
  * [Fitting Data](https://github.com/AnitaPetzler/FittingExamples)
  * [emcee](Emcee/README.md)
  * [git](GitVersionControl/README.md)
- * [Keras](Coffee and Code - Keras.ipynb)
+ * [Keras](https://github.com/OZAstroComputingResources/MQCoffee-CodeResources/Coffee and Code - Keras.ipynb)
  * [Moving to Python 3](ToPy3/README.md)
  * [SSH Tricks](SSHTricks/README.md)
