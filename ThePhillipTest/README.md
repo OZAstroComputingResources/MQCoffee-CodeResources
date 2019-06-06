@@ -1,4 +1,4 @@
-#The "Philip Test" - 11 Apr 2014 - James Tocknell
+# The "Philip Test" - 11 Apr 2014 - James Tocknell
 
 The Philip Test is a "quiz" to see how effectively you are producing research with respect to programming. It can be found here: http://pgbovine.net/research-programming-workflow.htm.
 
