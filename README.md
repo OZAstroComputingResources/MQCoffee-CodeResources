@@ -16,4 +16,7 @@ This repository contains resources we have created or used, that are not part of
  * ["The Phillip Test": How effective is your research programming workflow?](ThePhillipTest/README.md)
  * [Where to find help](WhereToFindHelp/README.md)
  * [Fitting Data](https://github.com/AnitaPetzler/FittingExamples)
+ * [emcee](Emcee/README.md)
+ * [git](GitVersionControl/README.md)
  * [Moving to Python 3](ToPy3/README.md)
+ * [SSH Tricks](SSHTricks/README.md)
