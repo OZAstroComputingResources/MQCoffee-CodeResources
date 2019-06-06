@@ -137,7 +137,7 @@ ForwardX11 yes
 Hostname %h.science.mq.edu.au
 ```
 
-## Proxies (ProxyJump/ProxyCommand)
+### Proxies (ProxyJump/ProxyCommand)
 SSH has built in support for connecting to a server via other servers, which we
 can use to get to ceres from outside MQ. The easiest way is to define another
 `Host` section like so:
