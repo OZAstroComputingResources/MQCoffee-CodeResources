@@ -21,3 +21,7 @@ This repository contains resources we have created or used, that are not part of
  * [Keras](https://github.com/OZAstroComputingResources/MQCoffee-CodeResources/Coffee%20and%20Code%20-%20Keras.ipynb)
  * [Moving to Python 3](ToPy3/README.md)
  * [SSH Tricks](SSHTricks/README.md)
+
+
+## Other things
+ * [Here's a list of other resources we've used as part of Coffee and Code](OtherResources/README.md)
