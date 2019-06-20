@@ -1,0 +1,8 @@
+pyyaml
+numpy
+matplotlib
+seaborn
+astropy
+astroplan
+rise
+Faker
