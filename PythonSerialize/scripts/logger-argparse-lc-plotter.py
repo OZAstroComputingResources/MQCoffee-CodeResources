@@ -10,22 +10,26 @@ from matplotlib import pyplot as plt
 # Set up our logging. A name is not required but is nice.
 import logging
 logger = logging.getLogger('planet_plotter')
+# Lowest possible log level you want
+logger.setLevel(logging.DEBUG)
+logger.propagate = False
+
 
 def main(filename, planet_name=None, overwrite=False):
     logging.debug(f'Entering main')
-    
+
     # Our convenience function (could be loaded rather than copied):
     def load_config(filename):
         logger.debug(f'Loading {filename}')
 
         with open(filename, 'r') as f:
             my_config = yaml.safe_load(f.read())
-            
+
         return my_config
 
     # Load our planet info
     planets = load_config(filename)
-    
+
     if planet_name is not None:
         # Check for planet
         if planet_name not in planets:
@@ -33,12 +37,12 @@ def main(filename, planet_name=None, overwrite=False):
             return
 
         # Otherwise use only that planet
-        planets = { planet_name: planets[planet_name] }
+        planets = {planet_name: planets[planet_name]}
     else:
         planet_name = 'All Planets'
 
-    logger.info(f'Making plot for {planet_name}')        
-        
+    logger.info(f'Making plot for {planet_name}')
+
     fig, ax = plt.subplots(1)
     fig.set_size_inches(12, 9)
 
@@ -51,9 +55,9 @@ def main(filename, planet_name=None, overwrite=False):
 
             ax.plot(np.array(lc0))
             ax.set_title(planet_name)
-        
+
     plot_fn = planet_name.lower().replace(' ', '-')
-        
+
     logger.debug(f'Using {plot_fn}')
     plot_path = f'plots/{plot_fn}-light-curve.png'
 
@@ -65,8 +69,9 @@ def main(filename, planet_name=None, overwrite=False):
         sys.exit(1)
 
     plt.close(fig)
-    
+
     return plot_fn
+
 
 if __name__ == '__main__':
 
@@ -79,26 +84,46 @@ if __name__ == '__main__':
     parser.add_argument('--overwrite', action='store_true', default=False,
                         help='Overwrite any existing files, default False.')
     # See logging: https://docs.python.org/3.7/howto/logging.html#logging-advanced-tutorial
+    parser.add_argument('--log-file', default='planet-plotter.log', help='Filename to log to')
     parser.add_argument('--log-level', default='info', help='Log level, default INFO')
 
     # Load the arguments
     args = parser.parse_args()
 
+    # Set the log level
     log_levels = {
         'info': logging.INFO,
         'debug': logging.DEBUG,
     }
-    
-    logger.setLevel(log_levels[args.log_level])
-    
+
+    # create file handler which logs even debug messages
+    fh = logging.FileHandler(args.log_file)
+    # File always has debug
+    fh.setLevel(logging.DEBUG)
+
+    # create console handler with custom log level
+    ch = logging.StreamHandler()
+    ch.setLevel(log_levels[args.log_level])
+
+    # create formatter and add it to the handlers
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    fh.setFormatter(formatter)
+    ch.setFormatter(formatter)
+
+    # add the handlers to the logger
+    logger.addHandler(ch)
+    logger.addHandler(fh)
+
+    logger.info(f'******************************')
+
     if not os.path.exists(args.config):
         logger.warning("Config file does not exist:", args.config)
 
     planet_name = main(
-            filename=args.config,
-            planet_name=args.planet_name,
-            overwrite=args.overwrite,
-            )
-    
+        filename=args.config,
+        planet_name=args.planet_name,
+        overwrite=args.overwrite,
+    )
+
     if planet_name is not None:
         logger.info(f"Done making plot for {planet_name}")
